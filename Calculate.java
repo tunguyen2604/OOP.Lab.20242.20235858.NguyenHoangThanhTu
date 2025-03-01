@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-public class ShowTwoNumbers {
+public class Calculate {
     public static void main(String[] args) {
         String strNum1, strNum2;
         String strNotification = "The sum, difference, product, and quotient of ";
