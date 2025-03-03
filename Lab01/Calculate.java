@@ -1,3 +1,4 @@
+//Lab 2.2.5
 import javax.swing.JOptionPane;
 public class Calculate {
     public static void main(String[] args) {
