@@ -3,6 +3,8 @@ public class SortArray{
     public static void main(String[] args) {
         
     double[] array = {205, 433, 12, 754, 67};
+    System.out.println("The initial array: ");
+    System.out.println(Arrays.toString(array));
     int n = 5;
     double sum = 0; 
     for(int i=0; i<n; i++) {

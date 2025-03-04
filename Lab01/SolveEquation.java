@@ -83,7 +83,7 @@ public class SolveEquation {
                 "Please input a number different from 0 for the first parameter!: ", "Input the first parameter", JOptionPane.INFORMATION_MESSAGE);
         num1 = Double.parseDouble(strNum1);
     }
-    double delta = num2*num2-num1*num3;
+    double delta = num2*num2-4*num1*num3;
     if(delta<0) {
         String strNotification = "There is no answer for the equation!";
         JOptionPane.showMessageDialog(null, strNotification,
