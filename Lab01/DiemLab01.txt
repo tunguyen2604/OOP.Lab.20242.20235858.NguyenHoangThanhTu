@@ -1,3 +1,4 @@
-9.5
+9-
 Bài 2.2.5 số chia = 0 thì phải tính tổng hiệu và tích
 Bài 6.3 in tam giác chưa đúng
+Bài 6.1 chưa trả lời câu hỏi
