@@ -1,3 +1,5 @@
+
+
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private DigitalVideoDisc itemsOrdered[] = 
@@ -53,15 +55,26 @@ public class Cart {
     public float totalCost() {
         float total=0;
         for(int i=0; i<qtyOrdered; i++) {
-            total+=itemsOrdered[i].cost;
+            total+=itemsOrdered[i].getCost();
         }
         return total;
     }
 
     public void printTotal() {
         for(int i=0; i<qtyOrdered; i++) {
-            System.out.println(i+1 + "\t" + itemsOrdered[i].title + "\t" + itemsOrdered[i].cost + "\n");
+            System.out.println(itemsOrdered[i].toString());
         }
         System.out.printf("\tTotal Cost\t%.2f", totalCost());
+    }
+
+    public void search(String titleString) {
+        for(int i=0; i<qtyOrdered; i++) {
+            if(itemsOrdered[i].isMatch(titleString)) {
+                System.out.println("The title you're searching for is No." + (i+1));
+                return;
+            }
+        }
+        System.out.println("The title you're searching for isn't in your cart.");
+        return;
     }
 }

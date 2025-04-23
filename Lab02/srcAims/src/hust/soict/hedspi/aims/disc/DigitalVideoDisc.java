@@ -1,9 +1,10 @@
+
 public class DigitalVideoDisc {
     public String title;
     private String category;
     private String director;
     private int length;
-    public float cost;
+    private float cost;
     public String getTitle() {
         return title;
     }
@@ -40,5 +41,13 @@ public class DigitalVideoDisc {
         this.length = length;
         this.cost = cost;
     }
-    
+    public String toString() {
+        return title + "\t" + category + "\t" + director + "\t" + length + "\t" + cost;
+    }
+
+    public boolean isMatch(String titleString) {
+        boolean matched = false;
+        if(title == titleString) matched = true;
+        return matched;
+    }
 }
