@@ -1,0 +1,33 @@
+Reading Assignment: Please answer three questions below:
+
+- What are the advantages of Polymorphism?
+
+Tính đa hình cho phép thực hiện một tác vụ theo nhiều cách khác nhau. Điều này giúp cho chương trình trở nên linh hoạt hơn
+
+- How is Inheritance useful to achieve Polymorphism in Java?
+
+Tính kế thừa cho phép xây dựng một lớp mới dựa trên một lớp có sẵn. Nó cho phép lớp con sử dụng hoặc định nghĩa lại phương thức dã có sẵn ở lớp cha, giúp đạt được tính đa hình.
+
+- What are the differences between Polymorphism and Inheritance in Java?
+
+Tính kế thừa cho phép xây dựng một lớp mới dựa trên lớp có sẵn và điều này xảy ra ở cấp lớp. Tính đa hình cho phép thực hiện một tác vụ theo nhiều cách khác nhau và điều này xảy ra ở cấp phương thức.
+
+Question: Alternatively, to compare items in the cart, instead of using the Comparator class I have mentioned, you can use the Comparable interface and override the compareTo() method. You can refer to the Java docs to see the information of this interface.
+
+Suppose we are taking this Comparable interface approach.
+
+- What class should implement the Comparable interface?
+
+Lớp Media nên implement interface Comparable vì nó là đại diện cho các đối tượng chúng ta cần so sánh và sắp xếp
+
+- In those classes, how should you implement the compareTo() method to reflect the ordering that we want?
+
+Ta cài đặt sao cho nó phản ánh thứ tự ưu tiên ta muốn (ví dụ như so sánh theo title -> cost thì cài đặt so sánh theo title trước, nếu 2 title bằng nhau thì so sánh cost)
+
+- Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+
+Không thể, vì interface Comparable chỉ cho phép định nghĩa một cách sắp xếp mặc định (qua phương thức compareTo())
+
+- Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+
+Ta sẽ tạo lớp con DVD kế thừa lớp Media và override phương thức compareTo()
