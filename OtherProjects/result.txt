@@ -1,0 +1,47 @@
+ current_user 
+--------------
+ postgres
+(1 row)
+
+ current_date 
+--------------
+ 2025-02-27
+(1 row)
+
+       current_timestamp       
+-------------------------------
+ 2025-02-27 11:58:22.648567+07
+(1 row)
+
+                     Table "store.Customer"
+   Column   |       Type        | Collation | Nullable | Default 
+------------+-------------------+-----------+----------+---------
+ CustomerID | character(6)      |           | not null | 
+ LastName   | character varying |           |          | 
+ FirstName  | character varying |           |          | 
+ Address    | character varying |           |          | 
+ City       | character varying |           |          | 
+ State      | character(2)      |           |          | 
+ Zip        | character(5)      |           |          | 
+ Phone      | character varying |           |          | 
+Indexes:
+    "pk_customer" PRIMARY KEY, btree ("CustomerID")
+Referenced by:
+    TABLE "store."Order"" CONSTRAINT "fk_order_2customer" FOREIGN KEY ("CustomerID") REFERENCES store."Customer"("CustomerID") NOT VALID
+
+                     Table "store.Customer"
+   Column   |       Type        | Collation | Nullable | Default 
+------------+-------------------+-----------+----------+---------
+ CustomerID | character(6)      |           | not null | 
+ LastName   | character varying |           |          | 
+ FirstName  | character varying |           |          | 
+ Address    | character varying |           |          | 
+ City       | character varying |           |          | 
+ State      | character(2)      |           |          | 
+ Zip        | character(5)      |           |          | 
+ Phone      | character varying |           |          | 
+Indexes:
+    "pk_customer" PRIMARY KEY, btree ("CustomerID")
+Referenced by:
+    TABLE "store."Order"" CONSTRAINT "fk_order_2customer" FOREIGN KEY ("CustomerID") REFERENCES store."Customer"("CustomerID") NOT VALID
+
