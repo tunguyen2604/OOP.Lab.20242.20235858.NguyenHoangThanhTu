@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
         "OtherProjects",
+        "AimsProject/src",
         "AimsProject",
-        "AimsProject\\src"
+        "GUIProject/hust/soict/hedspi/swing"
     ],
     "java.project.referencedLibraries": []
 }
