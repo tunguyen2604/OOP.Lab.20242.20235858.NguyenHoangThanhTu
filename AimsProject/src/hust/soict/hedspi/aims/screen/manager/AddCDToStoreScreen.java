@@ -59,10 +59,10 @@ public class AddCDToStoreScreen extends AddItemToStoreScreen {
         add(panel, BorderLayout.CENTER);
 
         JButton btnAdd = new JButton("Add");
-        panel.add(btnAdd, BorderLayout.SOUTH);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(btnAdd);
 
-        addListener btnAddListener = new addListener();
-        btnAdd.addActionListener(btnAddListener);
+        add(buttonPanel, BorderLayout.SOUTH);
 
         setVisible(true);
     }

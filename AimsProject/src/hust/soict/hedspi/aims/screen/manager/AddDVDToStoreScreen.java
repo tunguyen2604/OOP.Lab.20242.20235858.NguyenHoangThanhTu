@@ -28,7 +28,7 @@ public class AddDVDToStoreScreen extends AddItemToStoreScreen {
 
     public AddDVDToStoreScreen(Store store) {
         super(store);
-        setTitle("Add CD to Store");
+        setTitle("Add DVD to Store");
         setSize(512, 384);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -60,8 +60,11 @@ public class AddDVDToStoreScreen extends AddItemToStoreScreen {
         add(panel, BorderLayout.CENTER);
 
         JButton btnAdd = new JButton("Add");
-        panel.add(btnAdd, BorderLayout.SOUTH);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(btnAdd);
 
+        add(buttonPanel, BorderLayout.SOUTH);
+        
         addListener btnAddListener = new addListener();
         btnAdd.addActionListener(btnAddListener);
 

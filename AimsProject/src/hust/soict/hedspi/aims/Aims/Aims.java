@@ -1,14 +1,30 @@
 package hust.soict.hedspi.aims.Aims;
 
 import hust.soict.hedspi.aims.cart.Cart;
+import hust.soict.hedspi.aims.exception.PlayerException;
 import hust.soict.hedspi.aims.store.Store;
 import java.util.Scanner;
 import hust.soict.hedspi.aims.media.*;
 
 public class Aims {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         Store store = new Store();
         Cart cart = new Cart();
+
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc(1, "The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+                 
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc(2, "Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
+        
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc(3, "Aladin", "Animation", 18.99f);
+        
+        Book book1 = new Book (3, "Life of Pi", 4.95f);
+
+
+        store.addMedia(dvd1);
+        store.addMedia(dvd2);
+        store.addMedia(dvd3);
+        store.addMedia(book1);
+
 
         showMenu();
 
@@ -54,7 +70,12 @@ public class Aims {
                 Media m = store.searchByTitle(titleString);
 
                 if(m != null) {
-                    m.play();
+                    if(m instanceof Playable) {
+                        m.play();
+                    }
+                    else {
+                        throw new PlayerException("ERROR: Media is not playable!");
+                    }
                 }
 
                 else System.out.println("This item doesn't exist, please check again.");

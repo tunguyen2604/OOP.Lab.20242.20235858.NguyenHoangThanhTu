@@ -69,7 +69,7 @@ public class StoreManagerScreen extends JFrame {
 
         JMenuItem addCD = new JMenuItem("Add CD");
         addCDButtonListener addCDActionListener = new addCDButtonListener();
-        addCD.addActionListener(addBookActionListener);
+        addCD.addActionListener(addCDActionListener);
         smUpdateStore.add(addCD);
 
         JMenuItem addDVD = new JMenuItem("Add DVD");

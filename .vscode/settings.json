@@ -3,7 +3,7 @@
         "OtherProjects",
         "AimsProject/src",
         "AimsProject",
-        "GUIProject/hust/soict/hedspi/swing"
+        "GUIProject/hust/soict/hedspi/javafx"
     ],
     "java.project.referencedLibraries": []
 }

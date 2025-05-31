@@ -3,9 +3,11 @@ package hust.soict.hedspi.aims.cart;
 import java.util.*;
 
 import hust.soict.hedspi.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
-    private List<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
     public void addMedia(Media m) {
         if(itemsOrdered.indexOf(m) != -1) {
@@ -73,5 +75,22 @@ public class Cart {
     
     public void sortByCost() {
         Collections.sort(itemsOrdered, COMPARE_BY_COST_TITLE);
+    }
+
+
+    public static Comparator<Media> getCompareByTitleCost() {
+        return COMPARE_BY_TITLE_COST;
+    }
+
+    public static Comparator<Media> getCompareByCostTitle() {
+        return COMPARE_BY_COST_TITLE;
+    }
+
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
+    public void setItemsOrdered(ObservableList<Media> itemsOrdered) {
+        this.itemsOrdered = itemsOrdered;
     }
 }

@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import hust.soict.hedspi.aims.exception.PlayerException;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.media.Playable;
 
@@ -34,7 +35,12 @@ public class MediaStore extends JPanel {
         if(media instanceof Playable) {
             JButton playButton = new JButton("Play");
             playButton.addActionListener(e -> {
-                media.play();
+                try {
+                    media.play();
+                } catch (PlayerException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
                 JOptionPane.showMessageDialog(null,
                         "Media is now playing",
                         "PLAYING " + media.getTitle(),

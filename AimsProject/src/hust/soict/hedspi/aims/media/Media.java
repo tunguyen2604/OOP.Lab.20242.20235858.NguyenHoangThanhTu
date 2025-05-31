@@ -1,5 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
+import hust.soict.hedspi.aims.exception.PlayerException;
 
 public class Media extends java.lang.Object {
     private int id;
@@ -7,9 +8,11 @@ public class Media extends java.lang.Object {
     private String category;
     private float cost;
     
-    @Override public boolean equals(Object obj) {
+    @Override 
+    public boolean equals(Object obj) {
         Media other = (Media) obj;
-        return this.title.equals(other.getTitle());
+        if(obj == null) return false;
+        return this.title.equals(other.getTitle()) && this.cost == other.getCost();
     }
 
     public int getId() {
@@ -53,7 +56,7 @@ public class Media extends java.lang.Object {
         this.cost = cost;
     }
 
-    public void play() {}
+    public void play() throws PlayerException {}
 
     
 
